@@ -1,29 +1,37 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, use } from "react";
 import { Play } from "lucide-react";
 import { Pause } from "lucide-react";
 import { motion } from "framer-motion";
 
 const PhoneVideo = () => {
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
+  const [videoWidth , setVideoWidth] = useState("w-[100vw]")
   const [videoScroll, setVideoScroll] = useState(false);
 
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    const changeNavBar = () => {
-      if (window.scrollY >= 50) {
-        setVideoScroll(true);
+    const changeVideoWidth = () => {
+      const scrollY = window.scrollY;
+      if (scrollY >= 150) {
+        setVideoWidth("w-[88%]");
+      } else if (scrollY >= 120) {
+        setVideoWidth("w-[90%]");
+      } else if (scrollY >= 40) {
+        setVideoWidth("w-[95%]");
       } else {
-        setVideoScroll(false);
+        setVideoWidth("w-[98vw]");
       }
     };
+
     if (typeof window !== "undefined") {
-      window.addEventListener("scroll", changeNavBar);
+      window.addEventListener("scroll", changeVideoWidth);
     }
+
     return () => {
       if (typeof window !== "undefined") {
-        window.removeEventListener("scroll", changeNavBar);
+        window.removeEventListener("scroll", changeVideoWidth);
       }
     };
   }, []);
@@ -40,12 +48,8 @@ const PhoneVideo = () => {
   };
 
   return (
-    <div
-      className={
-        videoScroll
-          ? "relative z-10 w-[90%]    h-[550px]  transition-all duration-1000  "
-          : "relative z-10 w-[100vw]  h-[700px]  transition-all duration-1000  "
-      }
+    <div className={`relative z-10 ${videoWidth} h-[550px] transition-all duration-1000` }
+    
     >
       <p className="text-lg md:text-xl lg:text-4xl underline mb-2">
         Perfect-Phone

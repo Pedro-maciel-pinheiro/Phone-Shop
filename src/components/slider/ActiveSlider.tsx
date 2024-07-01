@@ -1,12 +1,14 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Pagination, Autoplay, Navigation } from "swiper/modules";
-import { ServiceData } from "@/constant";
+import { Autoplay, Navigation } from "swiper/modules";
+import { ServiceData } from "@/constant/data";
 import Image from "next/image";
 import DialogCard from "@/components/DialogCard";
 import { Plus, X } from "lucide-react";
+
+import "swiper/css";
+import "swiper/css/pagination";
+
 
 export default function ActiveSlider({ onItemClick }: any) {
   const handleClick = (item: any) => {
@@ -21,41 +23,42 @@ export default function ActiveSlider({ onItemClick }: any) {
       }}
       loop={true}
       speed={2500}
-      slidesPerView={2}
+     
       pagination={{
         clickable: true,
       }}
       breakpoints={{
         640: {
-          slidesPerView: 2,
-          spaceBetween: 20,
+          slidesPerView: 1,
+          spaceBetween: 8,
         },
         768: {
-          slidesPerView: 4,
-          spaceBetween: 25,
+          slidesPerView: 2,
+          spaceBetween: 15,
         },
         1024: {
           slidesPerView: 5,
-          spaceBetween: 30,
+          spaceBetween: 25,
         },
       }}
       modules={[Autoplay, Navigation]}
-      className="w-[90%] max-w-[80%] "
+      className="w-[100%] md:max-w-[80%] "
     >
       {ServiceData.map((item) => (
         <SwiperSlide key={item.title}>
-          <div className="flex flex-col gap-6 relative rounded-badge shadow-xl mb-20">
-            <div className="absolute text-white w-52 flex flex-col gap-2 p-4">
+          <div className="flex flex-col gap-4 relative rounded-badge shadow-xl mb-20 mx-4 md:mx-0" >
+            <div className="absolute text-white w-52 flex flex-col gap-2 p-6 md:p-4">
               <p className="text-lg text-gray-200"> {item.title}</p>
               <p className="text-xl font-semibold"> {item.subtitle}</p>
             </div>
             <Image
               onClick={() => handleClick(item)}
               src={item.backgroundImage}
-              width={350}
-              height={350}
+              width={450}
+              height={450}
               alt=""
-              className="block object-cover rounded-badge shadow-xl shadow-black/30"
+              className="block object-cover mx-auto
+              rounded-badge shadow-xl shadow-black/30"
             />
             <button className="absolute w-full h-full flex justify-end items-end p-5"
             onClick={() => handleClick(item)}>

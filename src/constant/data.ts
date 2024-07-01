@@ -6,6 +6,9 @@ import Image3 from "../assets/img_3.jpg"
 import Image4 from "../assets/img_4.jpg"
 import Image5 from "../assets/img_5.jpg"
 import Image6 from "../assets/img_6.jpg"
+import PhoneWallpaper1 from "../assets/phone-wall.jpg"
+import PhoneWallpaper2 from "../assets/phone-wall-2.png"
+import PhoneWallpaper3 from "../assets/phone-wall-3.jpg"
 import Privacy_img from "../assets/img_text_3.jpg"
 import Safety_img from "../assets/img_safety.jpg"
 import Innovation_img from "../assets/img_innovation.jpg"
@@ -27,6 +30,13 @@ export interface ServiceDataProps{
     firstLoremText?:string
     segundLoremText?:string
 }
+export interface PhoneWallpaperProps{
+    title:string
+    subtitle:string
+    backgroundImage:StaticImageData
+}
+
+
 
 
 export const ServiceData:ServiceDataProps[] = [
@@ -82,4 +92,24 @@ export const ServiceData:ServiceDataProps[] = [
     }
 
 
+]
+
+
+
+export const PhoneWallpaper:PhoneWallpaperProps[] =[
+   {
+    title:"phone info 1",
+    subtitle:"sub info 1",
+    backgroundImage:PhoneWallpaper1,
+   },
+   {
+    title:"phone info 2",
+    subtitle:"sub info 2",
+    backgroundImage:PhoneWallpaper2,
+   },
+   {
+    title:"phone info 3",
+    subtitle:"sub info 3",
+    backgroundImage:PhoneWallpaper3,
+   },
 ]

@@ -1,5 +1,4 @@
-import MaskButton from "@/components/MaskButton";
-import Products from "@/components/products/page";
+import Products from "@/components/products/products";
 import {
   Card,
   CardContent,
@@ -7,24 +6,21 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { getDataPhoneCase } from "@/helper";
+import { ProductsProps } from "@/types/types";
 
 import React from "react";
 
-const getData = async () => {
-  const res = await fetch("https://jsonserver.reactbd.com/phonecase");
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  return res.json();
-};
-
 const PhoneCase = async () => {
-  const products = await getData();
+  const products: ProductsProps[] = await getDataPhoneCase();
 
   return (
     <div className="min-h-screen w-full">
-      <Products products={products} linkBasePath={"/singleproductcase"}/>
+      <Products
+        products={products}
+        linkBasePath={"/singleproductcase"}
+        Style={""}
+      />
     </div>
   );
 };

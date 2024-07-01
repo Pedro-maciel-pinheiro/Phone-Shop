@@ -1,25 +1,27 @@
-import Products from "@/components/products/page";
+import Products from "@/components/products/products";
 import Hero from "./hero/page";
 import Contact from "../components/slider/Slider";
-
-const getData = async () =>{
-  const res = await fetch("https://jsonserver.reactbd.com/phone")
-  if(!res.ok){
-    throw new Error("Failed to fetch data")
-  }
-  return res.json()
-}
-
-
+import { getPhoneData } from "@/helper";
+import { ProductsProps } from "@/types/types";
+import TextCard from "@/components/text/TextCard";
 
 export default async function Home() {
-  const products = await getData()
+  const products: ProductsProps[] = await getPhoneData();
   const limitedProducts = products.slice(0, 6);
+
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen w-full ">
+    <main className="flex flex-col items-center justify-center min-h-screen w-full">
       <Hero />
-      <Contact/>
-      <Products products={limitedProducts} linkBasePath={"/singleproduct"}/>
+      <Contact />
+
+      <div className="mb-96 mt-16 w-[80%] ">
+        <TextCard/>
+        <Products
+          products={limitedProducts}
+          linkBasePath={"/singleproduct"}
+          Style={""}
+        />
+      </div>
     </main>
   );
 }
