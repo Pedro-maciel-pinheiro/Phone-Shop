@@ -1,9 +1,10 @@
-import Products from "@/components/products/products";
 import Hero from "./hero/page";
 import Contact from "../components/slider/Slider";
 import { getPhoneData } from "@/helper";
 import { ProductsProps } from "@/types/types";
 import TextCard from "@/components/text/TextCard";
+import ProductsList from "./hero/ProductsList";
+import Accordion from "@/components/Accordion";
 
 export default async function Home() {
   const products: ProductsProps[] = await getPhoneData();
@@ -13,14 +14,12 @@ export default async function Home() {
     <main className="flex flex-col items-center justify-center min-h-screen w-full">
       <Hero />
       <Contact />
-
-      <div className="mb-96 mt-16 w-[80%] ">
-        <TextCard/>
-        <Products
-          products={limitedProducts}
-          linkBasePath={"/singleproduct"}
-          Style={""}
-        />
+      <div className=" mt-20 w-[80%] ">
+        <TextCard />
+        <ProductsList ApiData={limitedProducts} />
+      </div>
+      <div className="flex w-full h-screen items-center justify-center">
+        <Accordion />
       </div>
     </main>
   );

@@ -1,7 +1,5 @@
 import CustomCard from "@/components/CustomCard";
 import { getSingleProduct } from "@/helper";
-import { motion } from "framer-motion";
-import Image from "next/image";
 import React from "react";
 
 type Props = {
@@ -15,7 +13,7 @@ const SingleProduct = async ({ searchParams }: Props) => {
 
   return (
     <div
-      className=" bg-primary 
+      className=" 
       min-h-screen w-full flex items-center justify-center
       "
     >

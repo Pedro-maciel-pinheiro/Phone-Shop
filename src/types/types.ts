@@ -4,16 +4,29 @@ export interface Product {
     price: number;
     previousPrice: number;
     description: string;
-    // other properties...
   }
   
   export interface ProductsProps {
     products: Product[];
     linkBasePath: string;
+    ApiData:Product[];
   }
-  
 
-  // types.ts
+
+ export interface ProductsListProps {
+    ApiData: ProductsProps[];
+    
+  }
+
+ export interface LogoProps{
+    textStyle:string
+    underlineDelay:number
+    underlineWidth:string
+    flexStyle:string
+
+ }
+
+
 export interface ProductsProps {
   _id: number;
   title: string;
@@ -26,4 +39,4 @@ export interface ProductsProps {
   brand: string;
   quantity: number;
   link: string;
-}
+ }

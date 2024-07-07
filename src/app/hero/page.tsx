@@ -1,12 +1,8 @@
 "use client";
 import PhoneVideo from "@/components/PhoneVideo";
+import Logo from "@/components/logo/Logo";
 
-import {
-  slideInFromBottom,
-  slideInFromLeft,
-  slideInFromRight,
-  slideInFromTop,
-} from "@/utils/motion";
+import { slideInFromBottom, slideInFromTop } from "@/utils/motion";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -27,6 +23,14 @@ export default function Hero() {
         >
           {" "}
         </motion.div>
+        <div className="w-full   flex items-center justify-center">
+          <Logo
+            textStyle={"text-2xl md:text-5xl lg:text-6xl"}
+            underlineDelay={4}
+            flexStyle={"items-center justify-center"}
+            underlineWidth={"md:max-w-[350px] lg:max-w-[450px]"}
+          />
+        </div>
         <PhoneVideo />
       </motion.div>
     </motion.div>

@@ -9,6 +9,8 @@ import { PhoneWallpaper } from "@/constant/data";
 
 import PhoneSlider from "@/components/phoneSlider/PhoneSlider";
 import { getApiList, filterProductList } from "@/utils/productFilter";
+import { useInViewHook } from "@/hooks/inView";
+import Logo from "@/components/logo/Logo";
 
 export default function PhonePage() {
   const [productList, setProductList] = useState<any[]>([]);
@@ -26,10 +28,7 @@ export default function PhonePage() {
     setFilteredProducts(productList);
   };
 
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const { ref, inView } = useInViewHook();
 
   return (
     <motion.div
@@ -40,8 +39,14 @@ export default function PhonePage() {
       className="min-h-screen w-full flex flex-col items-center justify-center mx-auto"
     >
       <div className="mt-36 w-full h-full">
+        <div className="w-full flex items-start justify-start">
+          <Logo
+            textStyle={"text-2xl md:text-5xl"}
+            underlineDelay={3.5}
+            flexStyle={"items-start max-w-[80%] mx-auto"} 
+            underlineWidth={"md:max-w-[310px]"}          />
+        </div>
         <PhoneSlider DataHolder={PhoneWallpaper} />
-
         <ProductFilter
           products={productList}
           setBrand={handleFilterProductList}

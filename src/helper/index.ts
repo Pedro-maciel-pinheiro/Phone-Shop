@@ -4,7 +4,7 @@
 import { Product, ProductsProps } from "@/types/types";
 
 
-export const getPhoneData = async (): Promise<ProductsProps[]> => {
+export const getPhoneData = async () => {
   const res = await fetch("https://jsonserver.reactbd.com/phone");
   if (!res.ok) {
     throw new Error("Failed to fetch data");

@@ -28,7 +28,7 @@ export default function ThankYou() {
           us at joaopedrolk98@gmail.com
         </motion.p>
         <motion.div variants={slideInFromBottom(1.5)} className="">
-          <CustomButton title={"Continue Shopping"} link={"/"} />
+          <CustomButton title={"Continue Shopping"} LinkPath={"/"}   />
         </motion.div>
       </motion.div>
     </motion.div>
