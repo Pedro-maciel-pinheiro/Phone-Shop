@@ -124,40 +124,24 @@ export const PhoneShowCase: PhoneShowCaseProps[] = [
   },
 ];
 
-// export const AccordionData: PhoneShowCaseProps[] = [
-//   {
-//     title: "iPhone and Mac",
-//     content:
-//       "You can answer calls or messages from your iPhone directly on your Mac. Copy images, video, or text from your iPhone, then paste into another app on your nearby Mac. And with iCloud, you can access your favorite files from either your iPhone or Mac.",
-//     backgroundImage: IphoneMac,
-//   },
-//   {
-//     title: "iPhone and Apple Watch",
-//     content:
-//       "Misplaced your iPhone? The latest Apple Watch models can show you its approximate distance and direction.14 To set up a group photo on your iPhone, join the group and use Apple Watch as a viewfinder to snap the shot. And, when you take a call on your Apple Watch, just tap your iPhone to continue the conversation there.",
-//     backgroundImage: IphoneWat,
-//   },
-//   {
-//     title: "iPhone and AirPods",
-//     content:
-//       "Set up AirPods on iPhone with just a tap. You’ll love Adaptive Audio, which automatically tailors the noise control to provide the best listening experience across different environments and interactions throughout the day.",
-//     backgroundImage: IphoneMac,
-//   },
-// ];
 export const AccordionData: PhoneShowCaseProps[] = [
   {
-    title: "Lorem lorem",
-    content:" Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint totam, in quisquam asperiores, ab possimus nam eaque labore sunt nemo enim harum ipsum minima accusantium aliquid omnis quis laboriosam culpa.",
+    title: "iPhone and Mac",
+    content:
+      "You can answer calls or messages from your iPhone directly on your Mac. Copy images, video, or text from your iPhone, then paste into another app on your nearby Mac. And with iCloud, you can access your favorite files from either your iPhone or Mac.",
     backgroundImage: IphoneMac,
   },
   {
-    title: "Lorem lorem",
-   content:" Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint totam, in quisquam asperiores, ab possimus nam eaque labore sunt nemo enim harum ipsum minima accusantium aliquid omnis quis laboriosam culpa.",
+    title: "iPhone and Apple Watch",
+    content:
+      "Misplaced your iPhone? The latest Apple Watch models can show you its approximate distance and direction.14 To set up a group photo on your iPhone, join the group and use Apple Watch as a viewfinder to snap the shot. And, when you take a call on your Apple Watch, just tap your iPhone to continue the conversation there.",
     backgroundImage: IphoneWat,
   },
   {
-    title: "Lorem lorem",
-   content:" Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint totam, in quisquam asperiores, ab possimus nam eaque labore sunt nemo enim harum ipsum minima accusantium aliquid omnis quis laboriosam culpa.",
+    title: "iPhone and AirPods",
+    content:
+      "Set up AirPods on iPhone with just a tap. You’ll love Adaptive Audio, which automatically tailors the noise control to provide the best listening experience across different environments and interactions throughout the day.",
     backgroundImage: IphoneMac,
   },
 ];
+
