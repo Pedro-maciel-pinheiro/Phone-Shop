@@ -1,3 +1,19 @@
+
+
+export const smoothTransition = {
+  initial: { scale: 0.95 },
+  animate: {
+    scale: 1, 
+    transition: {
+      duration: 0.5, 
+     
+    },
+  },
+};
+
+
+
+
 export const letterVariant = {
   hidden: { x: -100, opacity: 0 },
   visible: (delay: number) => ({

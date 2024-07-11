@@ -18,6 +18,8 @@ import battery_img from "../assets/img_bettery.jpg";
 import Personalizey_img from "../assets/img_personalize.jpg";
 import Game_img from "../assets/img_game.jpg";
 
+
+
 import { StaticImageData } from "next/image";
 
 export interface ServiceDataProps {
@@ -34,12 +36,17 @@ export interface PhoneWallpaperProps {
   subtitle: string;
   backgroundImage: StaticImageData;
 }
+
+
 export interface PhoneShowCaseProps {
   title: string;
   subtitle?: string;
   content?: string;
   backgroundImage: string | StaticImageData;
 }
+
+
+
 
 export const ServiceData: ServiceDataProps[] = [
   {
@@ -144,4 +151,5 @@ export const AccordionData: PhoneShowCaseProps[] = [
     backgroundImage: IphoneMac,
   },
 ];
+
 

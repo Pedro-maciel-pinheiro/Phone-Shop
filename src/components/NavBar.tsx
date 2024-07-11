@@ -27,8 +27,8 @@ export default function NavBar() {
     <div
       className={
         navScroll
-          ? "w-full fixed rounded-md z-50  backdrop-blur transition-colors duration-500   supports-backdrop-blur:bg-black/80  "
-          : "w-full h-12 fixed bg-transparent z-50 transition-all duration-700 "
+          ? "w-full fixed rounded-md z-50  backdrop-blur hidden md:block transition-colors duration-500  supports-backdrop-blur:bg-black/80  "
+          : "w-full h-12 fixed bg-transparent z-50 transition-all duration-700 hidden md:block"
       }
     >
       
@@ -55,6 +55,12 @@ export default function NavBar() {
               className=" active:translate-y-1 transition-all "
             >
               Phone Case
+            </Link>
+            <Link
+              href={"/showcase"}
+              className=" active:translate-y-1 transition-all "
+            >
+              ShowCase
             </Link>
             <Link
               href={"/contact"}

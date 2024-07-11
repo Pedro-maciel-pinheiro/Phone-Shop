@@ -5,7 +5,7 @@ import { slideInFromTop } from "@/utils/motion";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-import { PhoneWallpaper } from "@/constant/data";
+import { PhoneWallpaper } from "@/Data/data";
 
 import PhoneSlider from "@/components/phoneSlider/PhoneSlider";
 import { getApiList, filterProductList } from "@/utils/productFilter";

@@ -1,7 +1,7 @@
 "use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
-import { ServiceData } from "@/constant/data";
+import { ServiceData } from "@/Data/data";
 import Image from "next/image";
 import DialogCard from "@/components/DialogCard";
 import { Plus, X } from "lucide-react";

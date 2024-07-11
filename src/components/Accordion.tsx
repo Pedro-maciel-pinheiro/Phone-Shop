@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { AccordionData } from "@/constant/data";
+import { AccordionData } from "@/Data/data";
 import { StaticImageData } from "next/image";
 import { fadeIn } from "@/utils/motion";
 import { ChevronUp } from "lucide-react";
