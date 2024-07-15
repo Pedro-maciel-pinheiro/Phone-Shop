@@ -18,9 +18,15 @@ const config = {
       },
     },
     extend: {
-      scale: {
-        "-1": "-1", // Add this line
+      backgroundColor: {
+        'white-20': 'rgba(255, 255, 255, 0.2)',
+        'white-50': 'rgba(255, 255, 255, 0.5)',
+        'white-80': 'rgba(255, 255, 255, 0.8)',
       },
+      scale: {
+        "-1": "-1", 
+      },
+      
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -75,6 +81,12 @@ const config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+      },
+      
+    },
+    variants: {
+      extend: {
+        backgroundColor: ['supports-backdrop-blur'],
       },
     },
   },

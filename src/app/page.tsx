@@ -6,12 +6,14 @@ import TextCard from "@/components/text/TextCard";
 import ProductsList from "./hero/ProductsList";
 import Accordion from "@/components/Accordion";
 
+
 export default async function Home() {
   const products: ProductsProps[] = await getPhoneData();
   const limitedProducts = products.slice(0, 6);
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen w-full">
+      
       <Hero />
       <Contact />
       <div className=" mt-20 w-[80%] ">

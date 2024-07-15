@@ -6,8 +6,6 @@ import { motion } from "framer-motion";
 import React from "react";
 
 
-
-
 export default function Logo({ flexStyle,textStyle,underlineDelay,underlineWidth}:LogoProps) {
   const { ref, inView } = useInViewHook();
   const text = "Perfect-Phone";

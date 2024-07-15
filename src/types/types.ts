@@ -1,3 +1,5 @@
+import { usePathname } from "next/navigation";
+
 export interface Product {
     brand: any;
     id: string;

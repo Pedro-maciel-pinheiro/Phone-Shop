@@ -4,18 +4,63 @@
 
 * {
   scroll-behavior: smooth;
-  
+}
+body{
+  scroll-behavior: smooth;
 }
 
 .PhoneModel {
-  background-image: linear-gradient(
-      to top,
-      rgb(230, 5, 5),
-      rgb(0, 0, 0)
-    ),
+  background-image: linear-gradient(to top, rgba(230, 5, 5, 0), rgb(0, 0, 0)),
     url("../../public/img/gradient.png");
-   background-position: center;
-   background-size: contain;
+  background-position: center;
+  background-size: contain;
+}
+
+.ZeroNine {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgb(0, 0, 0)),
+    url("../../public/img/09_bg.webp");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;
+}
+
+.textColor {
+  background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+  background-size: cover;
+  color: transparent;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  
+  
+}
+
+.textGlowEffect {
+  background: 50% 100% / 50% 50% no-repeat
+  radial-gradient(ellipse at bottom, #e11d48, transparent, transparent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+ 
+ 
+  animation: reveal 1500ms ease-in-out forwards 200ms,
+    glow 1500ms linear infinite 1200ms;
+}
+@keyframes reveal {
+  80% {
+    letter-spacing: 1px;
+  }
+  100% {
+    background-size: 300% 300%;
+  }
+}
+@keyframes glow {
+  40% {
+    text-shadow: 0 0 8px #e11d48;
+  }
+}
+
+.animate-wave {
+  animation: wave 1s linear infinite;
 }
 
 *::-webkit-scrollbar {

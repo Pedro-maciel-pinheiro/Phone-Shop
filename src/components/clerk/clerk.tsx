@@ -10,7 +10,7 @@ function Clerk() {
  
 
   return (
-    <div className="flex gap-3">
+    <div className="flex gap-3 ">
       {userId ? (
         <div>
           <UserButton afterSignOutUrl="/"/>
