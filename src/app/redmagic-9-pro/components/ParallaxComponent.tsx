@@ -39,7 +39,7 @@ const ParallaxComponent: React.FC = () => {
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden">
-      <div
+        <div
         className="ZeroNine h-screen w-full
           absolute z-10 bg-fixed bg-contain"
       />
@@ -65,7 +65,7 @@ const ParallaxComponent: React.FC = () => {
 
           <div className="flex gap-1">
             <p>The Cold That Never Ends</p>
-            <ChevronDown size={45} className="animate-pulse" />
+            <ChevronDown size={45} className="animate-bounce" />
           </div>
         </div>
       </motion.div>
@@ -75,7 +75,7 @@ const ParallaxComponent: React.FC = () => {
       >
         <div className="flex flex-col md:flex-row w-full max-w-7xl items-center justify-evenly relative ">
           <motion.div
-            className="hidden md:flex flex-col gap-6 z-20 "
+            className="hidden xl:flex flex-col gap-6 z-20 "
             initial="hidden"
             animate={navScroll ? "visible" : "hidden"}
           >
@@ -101,27 +101,9 @@ const ParallaxComponent: React.FC = () => {
             initial="hidden"
             animate="visible"
             variants={smoothTransition}
-            className="overflow-hidden flex items-center justify-center z-20 w-full h-[400px] md:h-full"
+            className="overflow-hidden flex items-center justify-center z-20 w-full h-[550px] 
+             md:h-full"
           >
-            <div
-              className={
-                navScroll
-                  ? "flex flex-col  transition-all duration-1000 w-16 max-w-28 opacity-100 translate-x-0"
-                  : "flex flex-col transition-all duration-1000 w-2 opacity-0 -translate-x-36"
-              }
-            >
-              <p className="text-white text-2xl font-semibold ">
-                {selectedImage.ram}
-              </p>
-
-              <span
-                className={
-                  navScroll
-                    ? "transition-all duration-1000  h-1 w-36 bg-rose-600"
-                    : "transition-all duration-1000  h-1 w-1 bg-rose-600"
-                }
-              />
-            </div>
             <Image
               src={selectedImage.frontImg}
               alt={selectedImage.label}
@@ -145,35 +127,49 @@ const ParallaxComponent: React.FC = () => {
               }
             />
           </motion.div>
+
           <motion.div
-            ref={ref}
-            initial={"hidden"}
             animate={navScroll ? "visible" : "hidden"}
             variants={slideInFromRight(0.6)}
-            className="flex items-center justify-center w-96 h-36 mb-16 z-20 gap-3"
+            className="flex flex-col-reverse md:flex-col items-center justify-center w-96 h-36 mb-16 z-20 gap-3"
           >
-            <div className="text-white font-semibold w-24 text-lg md:text-xl">
-              {selectedImage.label}
-            </div>
-            {RedMagicData.map((image, index) => (
-              <div className="w-16 md:w-8 flex items-center justify-center ">
-                <button key={index} onClick={() => setSelectedImage(image)}>
-                  <Image
-                    className={`rounded-sm transition-all duration-300 cursor-pointer ${
-                      selectedImage.frontImg &&
-                      selectedImage.backImg === image.backImg &&
-                      image.frontImg
-                        ? "ring-4 ring-rose-600 ring-offset-2 ring-offset-slate-50"
-                        : "border-2"
-                    }`}
-                    src={image.color_icon}
-                    alt={image.alt}
-                    width={30}
-                    height={30}
-                  />
-                </button>
+            <div className="flex gap-3 mt-3 md:mb-2">
+              
+              <div className="text-white font-semibold w-24 text-lg md:text-xl">
+                {selectedImage.label}
               </div>
-            ))}
+              {RedMagicData.map((image, index) => (
+                <div className="w-16 md:w-8 flex items-center justify-center ">
+                  <button key={index} onClick={() => setSelectedImage(image)}>
+                    <Image
+                      className={`rounded-sm transition-all duration-300 cursor-pointer ${
+                        selectedImage.frontImg &&
+                        selectedImage.backImg === image.backImg &&
+                        image.frontImg
+                          ? "ring-4 ring-rose-600 ring-offset-2 ring-offset-slate-50"
+                          : "border-2"
+                      }`}
+                      src={image.color_icon}
+                      alt={image.alt}
+                      width={30}
+                      height={30}
+                    />
+                  </button>
+                </div>
+              ))}
+            </div>
+            <motion.div
+              animate={navScroll ? "visible" : "hidden"}
+              variants={slideInFromRight(0.5)}
+              className="text-white text-2xl
+          flex flex-col items-center justify-center"
+            >
+              <p>{selectedImage.ram}</p>
+              <motion.span
+                variants={underlineVariant(2)}
+                className="w-36 h-1 bg-rose-700 "
+              />
+            </motion.div>
           </motion.div>
         </div>
       </div>

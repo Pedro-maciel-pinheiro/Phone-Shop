@@ -32,9 +32,7 @@ const RedMagicNavBar = () => {
       animate={"visible"}
       variants={fadeIn(0.3)}
       className={`fixed flex w-full  h-10  text-white z-50 
-         bg-black transition-all duration-700 ${navScroll ?"":""}`
-       
-      }
+         backdrop-blur-3xl transition-all duration-700 ${navScroll ? "" : ""}`}
     >
       <div className=" w-full  flex items-end mx-2 gap-8  ">
         <Link
@@ -46,7 +44,11 @@ const RedMagicNavBar = () => {
           REDMAGIC 9 Pro
         </Link>
 
-        <div className={`flex transition-all duration-1000  text-white/80 text-lg ${navScroll ?"gap-4":"gap-2"}`}>
+        <div
+          className={`hidden md:flex transition-all duration-1000  text-white/80 text-lg ${
+            navScroll ? "gap-4" : "gap-2"
+          }`}
+        >
           <Link className="hover:text-white transition-all" href={""}>
             Design
           </Link>
@@ -62,20 +64,27 @@ const RedMagicNavBar = () => {
           <Link className="hover:text-white transition-all " href={""}>
             Battery
           </Link>
+          <Link className="hover:text-white transition-all " href={""}>
+            Experience
+          </Link>
         </div>
       </div>
-      <div className="w-full flex justify-end items-end gap-4">
-        <Link className="text-white/80 font-semibold" href={"/specifications"}>
+      <div className="w-full flex justify-end items-center gap-4">
+        <Link
+          className="hidden md:block text-white/80 font-semibold"
+          href={"/specifications"}
+        >
           Specifications
         </Link>
 
         <button
-          className="transition-all duration-500 bg-rose-700 w-36 h-6 mx-2  rounded-sm flex text-end hover:ring-4
+          className="transition-all duration-500 bg-rose-700 w-16  md:h-6 mx-2  rounded-sm flex text-end hover:ring-4
          hover:ring-rose-900 hover:ring-offset-2 hover:ring-offset-slate-50"
         >
-          <p className="flex items-center justify-center w-full h-full">
-            Buy Now
-          </p>
+          <div className="flex items-center justify-center w-full h-full gap-1">
+            <p>Buy</p>
+            <p className="hidden md:block">Now</p>
+          </div>
         </button>
       </div>
     </motion.div>

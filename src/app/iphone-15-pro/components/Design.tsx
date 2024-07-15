@@ -16,8 +16,8 @@ const ImageCarousel = () => {
         ref={ref}
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        variants={fadeIn(1)}
-        className="flex flex-col items-center justify-center min-h-screen w-full "
+        variants={fadeIn(0.2)}
+        className="flex flex-col items-center justify-center min-h-screen w-[360px]   md:w-full mx-auto"
       >
         <motion.div
           className="w-full text-4xl max-w-4xl flex items-start justify-start

@@ -28,12 +28,10 @@ const IphoneNavbar = () => {
   return (
     <>
       <nav
-        className={`fixed   w-full  transition-all duration-1000
-       z-50  backdrop-blur-xl
-            contrast-200
-        border-white/50  ${navScroll ? "h-12 border-b " : "h-[58px] "} ${
-          mobileNavOpen ? "h-56 " : "h-12"
-        }`}
+        className={`fixed  w-full  transition-all duration-1000
+       z-50  backdrop-blur-xl border-white/50  ${
+         navScroll ? "h-12 border-b " : "h-[58px] "
+       } ${mobileNavOpen ? "h-56 " : "h-12"}`}
       >
         <div className="flex mt-2">
           <div className="w-full flex items-center justify-start mx-2 gap-8  ">
@@ -83,7 +81,7 @@ const IphoneNavbar = () => {
             </div>
           </div>
 
-          <div className="w-full flex items-center justify-end md:items-end gap-6 z-50 ">
+          <div className=" flex items-center justify-end md:items-end gap-6 z-50 ">
             <div onClick={() => setMobileNavOpen((prev) => !prev)}>
               <ChevronDown
                 size={30}

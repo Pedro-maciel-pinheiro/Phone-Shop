@@ -1,18 +1,19 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import IphoneActionButtons from "@/app/iphone-15-pro/components/IphoneActionButtons";
+import ActionButtons from "@/app/iphone-15-pro/components/ActionButtons";
 import Image, { StaticImageData } from "next/image";
 import SilentImg from "../../assets/Action/screen_silent.jpg";
 import { AnimatePresence, motion } from "framer-motion";
 import { useInViewHook } from "@/hooks/inView";
 import { ChevronRight } from "lucide-react";
-import PerformanceVideo from "./components/PerformanceVideo";
+import Performance from "./components/Performance";
 import WelcomePage from "./components/WelcomePage";
 import { underlineVariant } from "@/utils/motion";
-import InsideVideo from "./components/InsidePhoneVideo";
-import ImageCarousel from "./components/ImageCarousel";
+
 import IphoneNavbar from "./components/IphoneNavbar";
 import TitaniumSection from "./components/TitaniumSection";
+import Highlights from "./components/Highlights";
+import Design from "./components/Design";
 
 export default function ShowCase() {
   const { ref, inView } = useInViewHook();
@@ -44,18 +45,18 @@ export default function ShowCase() {
         <div className="w-full h-1 bg-[#101010] " />
       </div>
       <div id="Highlights" className="overflow-hidden">
-        <InsideVideo />
+       <Highlights/>
       </div>
       <div id="Design">
         <div className="w-full h-1 bg-[#101010] " />
-        <ImageCarousel />
+        <Design/>
         <div className="w-full h-1 bg-[#101010] " />
       </div>
       <div>
         <TitaniumSection />
       </div>
       <div className="bg-black w-full overflow-hidden " id="Performance">
-        <PerformanceVideo />
+        <Performance/>
         <div className="w-full h-1 bg-[#101010] mb-8" />
       </div>
 
@@ -71,10 +72,10 @@ export default function ShowCase() {
           >
             <div className="flex flex-col-reverse  md:flex-col gap-8 md:gap-0 relative mb-16">
               <div className="flex flex-col items-center justify-center">
-                <span className="text-2xl md:text-4xl font-semibold mt-2 w-64 md:mb-8">
+                <span className="text-2xl md:text-4xl font-semibold mt-2 w-64 md:w-full md:mb-8">
                   Get in on the Action button.
                 </span>
-                <span className="text-gray-500 w-64 md:w-74">
+                <span className="text-gray-500 w-64 md:w-full md:w-74">
                   The all‑new Action button is
                   <p className="text-white">
                     a fast track to your favorite feature.
@@ -96,7 +97,7 @@ export default function ShowCase() {
               </motion.div>
 
               <div className="flex w-full ">
-                <IphoneActionButtons
+                <ActionButtons
                   setBgImage={setBgImage}
                   selectedTitle={selectedTitle}
                   setSelectedTitle={setSelectedTitle}

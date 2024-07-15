@@ -14,7 +14,7 @@ const WelcomePage = () => {
             Buy
           </button>
         </Link>
-        <p className="text-white text-2xl">
+        <p className="text-white text-lg md:text-2xl">
           From $999 or $41.62/mo. for 24 mo.1
         </p>
       </div>

@@ -23,7 +23,7 @@ const TitaniumSection = () => {
     <>
       <motion.div
         ref={ref}
-        className="w-full min-h-screen flex  bg-[#101010] transition-all duration-1000"
+        className="w-full min-h-screen flex flex-col bg-[#101010] transition-all duration-1000 overflow-hidden"
       >
         <motion.div
           className="mx-auto mt-16"
@@ -41,20 +41,21 @@ const TitaniumSection = () => {
               iPhone. Forged in titanium
             </motion.p>
           </div>
-          <div className="flex flex-col items-center justify-center gap-5 w-full  h-full relative max-w-xl md:max-w-5xl">
-            <div className=" w-[460px] md:w-[950px] h-[460px] mb-2">
+          <div className="flex flex-col items-center justify-center  w-full  h-full relative max-w-xl md:max-w-5xl">
+            <div className=" w-[350px] md:w-[950px] h-[460px] mb-2 mx-auto">
               <video
                 ref={videoRef}
                 src="/video/titanium_video.mp4"
                 muted
-                className="rounded-t-xl w-full h-[500px] object-cover md:object-center "
-              />
+                className="rounded-t-xl w-[350px] md:w-full
+                h-[500px]  object-cover md:object-center "
+              /> 
             </div>
             <div
               className="flex flex-col md:flex-row gap-8
-             items-center justify-center w-full h-full mb-4"
+             items-center justify-center w-full h-full mb-4 mx-auto"
             >
-              <div className="w-[460px]  h-[460px] overflow-hidden">
+              <div className="w-[350px] md:w-[460px] max-w-[460px]  h-[460px] ">
                 <Image
                   src={"/img/titanium_2.jpg"}
                   alt={""}
@@ -63,7 +64,7 @@ const TitaniumSection = () => {
                   className="object-cover rounded-xl w-[460px] h-[460px] "
                 />
               </div>
-              <div className="w-[460px]  h-[460px]">
+              <div className=" w-[350px] md:w-[460px] max-w-[460px]  h-[460px] ">
                 <Image
                   src={"/img/titanium_3.jpg"}
                   alt={""}
@@ -75,17 +76,15 @@ const TitaniumSection = () => {
             </div>
           </div>
         </motion.div>
-      </motion.div>
-
-      <motion.div
+        <motion.div
         initial="hidden"
         animate={inView ? "visible" : "hidden"}
-        className="flex items-center justify-center w-full  bg-[#101010]  "
+        className="flex items-center justify-center  w-full  bg-[#101010]  "
       >
         <motion.div
           className="flex flex-col md:flex-row items-center 
         justify-center md:justify-between gap-8 md:gap-28 text-gray-400 
-        text-xl md:text-3xl w-[460px] md:w-[950px] h-[460px] "
+        text-xl md:text-2xl w-[350px] md:w-[950px] h-[350px] md:h-[250px] "
         >
           <motion.p variants={slideInFromBottom(2.5)}>
             <strong className="text-white font-semibold">iPhone 15</strong> Pro
@@ -100,6 +99,9 @@ const TitaniumSection = () => {
           </motion.p>
         </motion.div>
       </motion.div>
+      </motion.div>
+
+     
     </>
   );
 };
