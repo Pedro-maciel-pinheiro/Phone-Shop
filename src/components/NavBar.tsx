@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import Clerk from "@/components/clerk/clerk";
 import { usePathname } from "next/navigation";
 
 export default function NavBar() {
@@ -83,9 +82,7 @@ export default function NavBar() {
                 Contact
               </Link>
               
-              <div className={"absolute right-0 mr-2 mt-4"}>
-              <Clerk />
-              </div>
+             
             </div>
           </div>
         </div>

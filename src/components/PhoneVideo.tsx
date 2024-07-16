@@ -2,8 +2,6 @@
 import React, { useState, useRef, useEffect, use } from "react";
 import { Play } from "lucide-react";
 import { Pause } from "lucide-react";
-import { motion } from "framer-motion";
-import Logo from "./logo/Logo";
 
 const PhoneVideo = () => {
   const [isPlaying, setIsPlaying] = useState<boolean>(true);
