@@ -1,25 +1,23 @@
 "use client";
 import React, { useEffect, useState } from "react";
 
-
-function ProductFilter({ products, setBrand, resetFilter }: any) {
+function ProductFilter({ products, setBrand }: any) {
   const [brandList, setBrandList] = useState<string[]>([]);
   const [selectedBrand, setSelectedBrand] = useState<string>("optionDefault");
 
   useEffect(() => {
+    const generateBrandList = () => {
+      const brandSet = new Set<string>();
+      products.forEach((element: any) => {
+        brandSet.add(element.brand);
+      });
+      const sortedBrandList = Array.from(brandSet).sort();
+      setBrandList(sortedBrandList);
+    };
     if (products) {
       generateBrandList();
     }
   }, [products]);
-
-  const generateBrandList = () => {
-    const brandSet = new Set<string>();
-    products.forEach((element: any) => {
-      brandSet.add(element.brand);
-    });
-    const sortedBrandList = Array.from(brandSet).sort();
-    setBrandList(sortedBrandList);
-  };
 
   const handleBrandClick = (brand: string) => {
     setSelectedBrand(brand);

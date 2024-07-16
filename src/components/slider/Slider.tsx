@@ -1,9 +1,9 @@
 "use client";
 import ActiveSlider from "@/components/slider/ActiveSlider";
 import DialogCard from "@/components/DialogCard";
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { fadeIn, slideInFromLeft, slideInFromTop } from "@/utils/motion";
+import { fadeIn, slideInFromLeft } from "@/utils/motion";
 import { useInView } from "react-intersection-observer";
 
 

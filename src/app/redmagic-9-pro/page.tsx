@@ -5,6 +5,7 @@ import RedHighlights from "./components/RedHighlights";
 import RedPerformance from "./components/RedPerformance";
 import RedCooling from "./components/RedCooling";
 import RedBattery from "./components/RedBattery";
+import BorderLine from "./components/BorderLine";
 
 export default function RedMagicShowCase() {
   return (
@@ -12,6 +13,7 @@ export default function RedMagicShowCase() {
       <div className="bg-black">
         <RedNavBar />
       </div>
+      <BorderLine pageNumber={1}/>
       <div className="min-h-screen w-full bg-black" id="#Design">
         <ParallaxComponent />
       </div>

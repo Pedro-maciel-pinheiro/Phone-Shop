@@ -57,10 +57,11 @@ const ParallaxComponent: React.FC = () => {
               : "transition-all duration-1000 translate-y-0 z-10"
           }
         >
-          <img
+          <Image
             className="w-80 md:w-full"
             src="/img/logo.png"
             alt="red magic logo"
+            width={80} height={80}
           />
 
           <div className="flex gap-1">
@@ -105,9 +106,10 @@ const ParallaxComponent: React.FC = () => {
              md:h-full"
           >
             <Image
+             
               src={selectedImage.frontImg}
               alt={selectedImage.label}
-              width={258}
+              width={500}
               height={500}
               className={
                 navScroll
@@ -116,9 +118,11 @@ const ParallaxComponent: React.FC = () => {
               }
             />
             <Image
+              
               src={selectedImage.backImg}
               alt={selectedImage.label}
-              width={258}
+             
+              width={500}
               height={500}
               className={
                 navScroll
@@ -139,9 +143,9 @@ const ParallaxComponent: React.FC = () => {
                 {selectedImage.label}
               </div>
               {RedMagicData.map((image, index) => (
-                <div className="w-16 md:w-8 flex items-center justify-center ">
-                  <button key={index} onClick={() => setSelectedImage(image)}>
-                    <Image
+                <div key={index} className="w-16 md:w-8 flex items-center justify-center ">
+                  <button  onClick={() => setSelectedImage(image)}>
+                    <Image 
                       className={`rounded-sm transition-all duration-300 cursor-pointer ${
                         selectedImage.frontImg &&
                         selectedImage.backImg === image.backImg &&

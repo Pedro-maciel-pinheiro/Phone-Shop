@@ -15,6 +15,11 @@ export interface Product {
   }
 
 
+  export interface BorderLineProps{
+    pageNumber:number
+  }
+
+
  export interface ProductsListProps {
     ApiData: ProductsProps[];
     

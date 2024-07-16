@@ -1,13 +1,12 @@
 "use client";
-import { ServiceDataProps } from "@/constant";
+import { ServiceDataProps } from "@/Data/data";
 import {
   Dialog,
   DialogPanel,
-  DialogTitle,
   Transition,
   TransitionChild,
 } from "@headlessui/react";
-import React, { Fragment, useState } from "react";
+import React, { Fragment } from "react";
 import Image from "next/image";
 import { X } from "lucide-react";
 

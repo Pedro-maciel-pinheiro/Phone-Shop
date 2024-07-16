@@ -4,8 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
-import { ChevronLeft, ChevronRight, Plus } from "lucide-react";
-import Link from "next/link";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
 
 export default function SlideImgs() {
   const slide = useRef<HTMLDivElement | null>(null);

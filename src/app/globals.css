@@ -5,7 +5,7 @@
 * {
   scroll-behavior: smooth;
 }
-body{
+body {
   scroll-behavior: smooth;
 }
 
@@ -30,18 +30,21 @@ body{
   color: transparent;
   -moz-background-clip: text;
   -webkit-background-clip: text;
-  
-  
+}
+
+.grid-areas-custom {
+  display: grid;
+  grid-template-columns: 2fr 3fr 2fr;
+    
 }
 
 .textGlowEffect {
   background: 50% 100% / 50% 50% no-repeat
-  radial-gradient(ellipse at bottom, #e11d48, transparent, transparent);
+    radial-gradient(ellipse at bottom, #e11d48, transparent, transparent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
- 
- 
+
   animation: reveal 1500ms ease-in-out forwards 200ms,
     glow 1500ms linear infinite 1200ms;
 }

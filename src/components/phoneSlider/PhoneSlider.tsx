@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import {  PhoneWallpaperProps } from "@/Data/data";
 import { Autoplay, EffectFade,Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
