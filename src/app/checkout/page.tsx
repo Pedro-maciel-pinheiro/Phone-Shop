@@ -3,14 +3,21 @@ import MaskButton from "@/components/MaskButton";
 import { fadeIn, slideInFromTop } from "@/utils/motion";
 import { motion } from "framer-motion";
 import Link from "next/link";
-
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import { useInView } from "react-intersection-observer";
-
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
+import { useInViewHook } from "@/hooks/inView";
 
 export default function CheckOut() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CheckOutContent />
+    </Suspense>
+  );
+}
+
+function CheckOutContent() {
   const searchParams = useSearchParams();
   let price = searchParams.get("price");
   let category = searchParams.get("category");
@@ -18,17 +25,8 @@ export default function CheckOut() {
   let image: any = searchParams.get("image");
   let id = searchParams.get("id");
 
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-  });
-
-  const imageVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1 },
-  };
-
-  const animationDelay = 0.8;
-
+  const { ref, inView } = useInViewHook()
+ 
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -53,13 +51,9 @@ export default function CheckOut() {
       initial="hidden"
       variants={fadeIn(1)}
       animate={inView ? "visible" : "hidden"}
-      transition={{ delay: animationDelay }}
-      className="flex  items-center justify-center w-full min-h-screen"
+      className="flex items-center justify-center w-full min-h-screen"
     >
-      <div
-        className="w-80 max-w-xl h-80 flex 
-      items-center justify-center "
-      >
+      <div className="w-80 max-w-xl h-80 flex items-center justify-center">
         <div className="flex flex-col">
           <h1 className="text-center border-b-2 font-semibold mb-2">
             Product Information
@@ -92,8 +86,7 @@ export default function CheckOut() {
             onChange={(e) => setEmail(e.target.value)}
             type="email"
             placeholder="Email"
-            className="input input-bordered  w-full active:bg-gray-100
-             bg-white focus:bg-gray-100"
+            className="input input-bordered w-full active:bg-gray-100 bg-white focus:bg-gray-100"
           />
           <div className="text-xl font-semibold">
             <h1>Shipping address</h1>
@@ -119,7 +112,7 @@ export default function CheckOut() {
             onChange={(e) => setAddress(e.target.value)}
             type="text"
             placeholder="Address"
-            className="input input-bordered w-full  bg-white focus:bg-gray-100"
+            className="input input-bordered w-full bg-white focus:bg-gray-100"
           />
           <div className="flex gap-2">
             <input
@@ -127,14 +120,14 @@ export default function CheckOut() {
               onChange={(e) => setCity(e.target.value)}
               type="text"
               placeholder="City"
-              className="input input-bordered w-full  bg-white focus:bg-gray-100"
+              className="input input-bordered w-full bg-white focus:bg-gray-100"
             />
             <input
               value={state}
               onChange={(e) => setState(e.target.value)}
               type="text"
               placeholder="State"
-              className="input input-bordered w-full  bg-white focus:bg-gray-100"
+              className="input input-bordered w-full bg-white focus:bg-gray-100"
             />
             <input
               value={zip}
