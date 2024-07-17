@@ -40,7 +40,7 @@ const PhoneVideo = () => {
         window.removeEventListener("scroll", changeVideoWidth);
       }
     };
-  }, []);
+  }, [isPlaying]);
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -57,14 +57,12 @@ const PhoneVideo = () => {
     <div
       className={`relative z-10 max-w-[95vw] min-w-[350px] ${videoWidth} h-[550px] transition-all duration-1000`}
     >
-      
       <div
         onClick={togglePlay}
         className="absolute z-10  w-full h-full transition-all duration-300
       flex items-end md:items-center  justify-end md:justify-center  text-white
        md:opacity-0 hover:opacity-100"
       >
-       
         <div
           className="bg-black/50  
         rounded-full md:p-3 "

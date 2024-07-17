@@ -18,15 +18,13 @@ const config = {
       },
     },
     extend: {
-      backgroundColor: {
-        'white-20': 'rgba(255, 255, 255, 0.2)',
-        'white-50': 'rgba(255, 255, 255, 0.5)',
-        'white-80': 'rgba(255, 255, 255, 0.8)',
+      fontFamily: {
+        roboto: ["Roboto", "sans-serif"],
+        orbitron: ["Orbitron", "sans-serif"],
       },
       scale: {
-        "-1": "-1", 
+        "-1": "-1",
       },
-      
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -82,15 +80,18 @@ const config = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-      
     },
     variants: {
       extend: {
-        backgroundColor: ['supports-backdrop-blur'],
+        backgroundColor: ["supports-backdrop-blur"],
       },
     },
   },
-  plugins: [require("tailwindcss-animate"), require("daisyui")],
+  plugins: [
+    require("tailwindcss-animate"),
+    require("daisyui"),
+    require("@tailwindcss/typography"),
+  ],
 } satisfies Config;
 
 export default config;

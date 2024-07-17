@@ -1,38 +1,34 @@
 import { usePathname } from "next/navigation";
 
 export interface Product {
-    brand: any;
-    id: string;
-    price: number;
-    previousPrice: number;
-    description: string;
-  }
-  
-  export interface ProductsProps {
-    products: Product[];
-    linkBasePath: string;
-    ApiData:Product[];
-  }
+  brand: any;
+  id: string;
+  price: number;
+  previousPrice: number;
+  description: string;
+}
 
+export interface ProductsProps {
+  products: Product[];
+  linkBasePath: string;
+  ApiData: Product[];
+}
 
-  export interface BorderLineProps{
-    pageNumber:number
-  }
+export interface BorderLineProps {
+  pageNumber: number;
+  title: string;
+}
 
+export interface ProductsListProps {
+  ApiData: ProductsProps[];
+}
 
- export interface ProductsListProps {
-    ApiData: ProductsProps[];
-    
-  }
-
- export interface LogoProps{
-    textStyle:string
-    underlineDelay:number
-    underlineWidth:string
-    flexStyle:string
-
- }
-
+export interface LogoProps {
+  textStyle: string;
+  underlineDelay: number;
+  underlineWidth: string;
+  flexStyle: string;
+}
 
 export interface ProductsProps {
   _id: number;
@@ -46,4 +42,4 @@ export interface ProductsProps {
   brand: string;
   quantity: number;
   link: string;
- }
+}

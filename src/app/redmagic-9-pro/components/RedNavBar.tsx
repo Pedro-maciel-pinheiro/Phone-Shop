@@ -45,7 +45,8 @@ const RedMagicNavBar = () => {
         </Link>
 
         <div
-          className={`hidden md:flex transition-all duration-1000  text-white/80 text-lg ${
+          className={`hidden lg:flex transition-all duration-1000 
+             text-white/80 text-[15px] ${
             navScroll ? "gap-4" : "gap-2"
           }`}
         >

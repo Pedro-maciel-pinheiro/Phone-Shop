@@ -1,7 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 * {
   scroll-behavior: smooth;
 }
@@ -61,6 +61,31 @@ body {
     text-shadow: 0 0 8px #e11d48;
   }
 }
+
+.textGlow-blue {
+  background: 50% 100% / 50% 50% no-repeat
+    radial-gradient(ellipse at bottom, #1128fd, transparent, transparent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  animation: revealblue 1500ms ease-in-out forwards 200ms,
+    glowblue 1500ms linear infinite 1200ms;
+}
+@keyframes revealblue {
+  80% {
+    letter-spacing: 1px;
+  }
+  100% {
+    background-size: 300% 300%;
+  }
+}
+@keyframes glowblue {
+  40% {
+    text-shadow: 0 0 8px #142cff;
+  }
+}
+
 
 .animate-wave {
   animation: wave 1s linear infinite;

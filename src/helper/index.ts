@@ -1,9 +1,4 @@
 
-
-
-import { Product, ProductsProps } from "@/types/types";
-
-
 export const getPhoneData = async () => {
   const res = await fetch("https://jsonserver.reactbd.com/phone");
   if (!res.ok) {

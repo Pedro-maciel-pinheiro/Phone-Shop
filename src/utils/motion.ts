@@ -75,11 +75,11 @@ export function getTransitionProps(delay: number) {
   return {
     transition: {
       delay: delay,
-      duration: 0.3, // Increase duration for a smoother transition
+      duration: 0.2, // Increase duration for a smoother transition
       type: "spring",
-      stiffness: 30, // Lower stiffness for a smoother, less rigid spring
-      damping: 20, // Increase damping to reduce oscillation
-      mass: 0.5, // Adjust mass to control the inertia of the spring
+      stiffness: 20, // Lower stiffness for a smoother, less rigid spring
+      damping: 10, // Increase damping to reduce oscillation
+      mass: 0.2, // Adjust mass to control the inertia of the spring
     },
   };
 }

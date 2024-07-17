@@ -61,7 +61,7 @@ const ParallaxComponent: React.FC = () => {
             className="w-80 md:w-full"
             src="/img/logo.png"
             alt="red magic logo"
-            width={80} height={80}
+            width={500} height={500}
           />
 
           <div className="flex gap-1">
