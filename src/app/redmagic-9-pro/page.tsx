@@ -5,7 +5,7 @@ import RedPerformance from "./components/RedPerformance";
 import RedCooling from "./components/RedCooling";
 import RedBattery from "./components/RedBattery";
 import BorderLine from "./components/BorderLine";
-import { orbitron } from "../layout";
+import { orbitron } from "@/types/types";
 import RedMagicNavBar from "./components/RedNavBar";
 
 export default function RedMagicShowCase() {
