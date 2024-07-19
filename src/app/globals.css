@@ -61,6 +61,27 @@ body {
     text-shadow: 0 0 8px #e11d48;
   }
 }
+.textGlow-white {
+  background: 50% 100% / 50% 50% no-repeat
+    radial-gradient(ellipse at bottom, #fdfdfd, transparent, transparent);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  animation: revealwhite 1500ms ease-in-out forwards 200ms,
+    glowwhite 1500ms linear infinite 1200ms;
+}
+@keyframes revealwhite {
+  
+  100% {
+    background-size: 300% 300%;
+  }
+}
+@keyframes glowwhite {
+  40% {
+    text-shadow: 0 0 8px #ffffff;
+  }
+}
 
 .textGlow-blue {
   background: 50% 100% / 50% 50% no-repeat

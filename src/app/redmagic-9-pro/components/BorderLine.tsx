@@ -41,7 +41,7 @@ const BorderLine = ({ pageNumber, title }: BorderLineProps) => {
           </motion.p>
         </span>
         <div className="w-full flex items-center justify-center text-[14px] sm:text-xl lg:text-3xl text-white text-center ">
-          <motion.p variants={slideInFromBottom(0.4)}>{title}</motion.p>
+          <motion.p className="textGlow-white" variants={slideInFromBottom(0.4)}>{title}</motion.p>
         </div>
       </div>
       <motion.div

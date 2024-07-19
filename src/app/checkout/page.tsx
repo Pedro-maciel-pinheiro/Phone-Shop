@@ -1,13 +1,15 @@
+// checkout.tsx (your main component file)
 "use client";
 import MaskButton from "@/components/MaskButton";
-import { fadeIn, slideInFromTop } from "@/utils/motion";
+import { fadeIn } from "@/utils/motion";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import React, { Suspense, useState } from "react";
-import { useInView } from "react-intersection-observer";
+import React, { Suspense } from "react";
 import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import { useInViewHook } from "@/hooks/inView";
+import { useInputFields, InputFields } from "./inputs";
+import { Button } from "@/components/ui/button";
 
 export default function CheckOut() {
   return (
@@ -19,21 +21,30 @@ export default function CheckOut() {
 
 function CheckOutContent() {
   const searchParams = useSearchParams();
-  let price = searchParams.get("price");
-  let category = searchParams.get("category");
-  let brand: any = searchParams.get("brand");
-  let image: any = searchParams.get("image");
-  let id = searchParams.get("id");
+  const price = searchParams.get("price");
+  const category = searchParams.get("category");
+  const brand = searchParams.get("brand");
+  const image = searchParams.get("image");
+  const id = searchParams.get("id");
 
-  const { ref, inView } = useInViewHook()
- 
-  const [email, setEmail] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [address, setAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [state, setState] = useState("");
-  const [zip, setZip] = useState("");
+  const { ref, inView } = useInViewHook();
+
+  const {
+    email,
+    setEmail,
+    firstName,
+    setFirstName,
+    lastName,
+    setLastName,
+    address,
+    setAddress,
+    city,
+    setCity,
+    state,
+    setState,
+    zip,
+    setZip,
+  } = useInputFields();
 
   const handleSendMessage = () => {
     const message = `Contact Information:\nEmail: ${email}\n\nShipping Address:\nFirst Name: ${firstName}\nLast Name: ${lastName}\nAddress: ${address}\nCity: ${city}\nState: ${state}\nZip: ${zip}\n\nProduct Information:\nId: ${id}\nBrand: ${brand}\nCategory: ${category}\nPrice: ${price}`;
@@ -44,6 +55,27 @@ function CheckOutContent() {
       "_blank"
     );
   };
+
+  // Check if the cart is empty
+  const isEmptyCart = !price || !category || !brand || !image || !id;
+
+  // Check if all input fields are filled
+  const isFormValid =
+    email && firstName && lastName && address && city && state && zip;
+
+  if (isEmptyCart) {
+    return (
+      <div className="flex items-center justify-center w-full min-h-screen">
+        <div className="text-center">
+          <h1 className="text-3xl font-semibold mb-4">Your cart is empty</h1>
+          <Link href="/" className="text-blue-500 underline">
+            <MaskButton title={"Continue shopping"} 
+             btnColor={"after:bg-green-500 w-36"} linkBasePath={"/"}/>
+          </Link>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <motion.div
@@ -71,86 +103,42 @@ function CheckOutContent() {
             <p>{price}</p>
           </div>
         </div>
-        <Image src={image} alt={brand} width={200} height={200} />
+        {image && <Image src={image} alt={brand} width={200} height={200} />}
       </div>
       <div className="flex flex-col text-5xl items-start justify-start w-full max-w-xl gap-5">
         <div className="underline">
           <h1>Perfect-Phone</h1>
         </div>
-        <div className="flex flex-col w-full max-w-xl gap-4 border-2 shadow-xl rounded-xl p-5">
-          <div className="text-xl font-semibold">
-            <h1>Contact Information</h1>
-          </div>
-          <input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            placeholder="Email"
-            className="input input-bordered w-full active:bg-gray-100 bg-white focus:bg-gray-100"
+        <InputFields
+          email={email}
+          setEmail={setEmail}
+          firstName={firstName}
+          setFirstName={setFirstName}
+          lastName={lastName}
+          setLastName={setLastName}
+          address={address}
+          setAddress={setAddress}
+          city={city}
+          setCity={setCity}
+          state={state}
+          setState={setState}
+          zip={zip}
+          setZip={setZip}
+        />
+        <div className="flex justify-between items-center">
+          <Link
+            href="/"
+            className="active:translate-y-1 transition-all duration-75 hover:font-semibold"
+          >
+            <button className="underline text-xl">{"<"} Return</button>
+          </Link>
+          <MaskButton
+            linkBasePath={""}
+            title={"Pay"}
+            btnColor={"after:bg-green-500"}
+            handleclick={handleSendMessage}
+            disable={!isFormValid}
           />
-          <div className="text-xl font-semibold">
-            <h1>Shipping address</h1>
-          </div>
-          <div className="flex gap-2">
-            <input
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              type="text"
-              placeholder="First name"
-              className="input input-bordered w-full bg-white focus:bg-gray-100"
-            />
-            <input
-              value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
-              type="text"
-              placeholder="Last name"
-              className="input input-bordered w-full bg-white focus:bg-gray-100"
-            />
-          </div>
-          <input
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-            type="text"
-            placeholder="Address"
-            className="input input-bordered w-full bg-white focus:bg-gray-100"
-          />
-          <div className="flex gap-2">
-            <input
-              value={city}
-              onChange={(e) => setCity(e.target.value)}
-              type="text"
-              placeholder="City"
-              className="input input-bordered w-full bg-white focus:bg-gray-100"
-            />
-            <input
-              value={state}
-              onChange={(e) => setState(e.target.value)}
-              type="text"
-              placeholder="State"
-              className="input input-bordered w-full bg-white focus:bg-gray-100"
-            />
-            <input
-              value={zip}
-              onChange={(e) => setZip(e.target.value)}
-              type="text"
-              placeholder="Zip"
-              className="input input-bordered w-full bg-white focus:bg-gray-100"
-            />
-          </div>
-          <div className="flex justify-between items-center">
-            <Link
-              href="/"
-              className="active:translate-y-1 transition-all duration-75 hover:font-semibold"
-            >
-              <button className="underline text-xl">{"<"} Return</button>
-            </Link>
-            <MaskButton
-              linkBasePath={""}
-              title={"Pay"}
-              btnColor={"after:bg-green-500"}
-              handleclick={handleSendMessage}
-            />
-          </div>
         </div>
       </div>
     </motion.div>

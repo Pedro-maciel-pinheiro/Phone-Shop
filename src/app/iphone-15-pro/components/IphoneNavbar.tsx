@@ -86,7 +86,7 @@ const IphoneNavbar = () => {
               <ChevronDown
                 size={30}
                 style={{
-                  transform: mobileNavOpen ? "scaleY(1)" : "scaleY(-1)",
+                  transform: mobileNavOpen ? "scaleY(-1)" : "scaleY(1)",
                 }}
                 className="text-white 
                  transition-all duration-700 block md:hidden"
@@ -96,6 +96,7 @@ const IphoneNavbar = () => {
               href={{
                 pathname: "/checkout",
                 query: {
+                  id:"0001",
                   price: "999",
                   category: "Phone",
                   image: "/img/Iphone-show.png",
@@ -121,7 +122,7 @@ const IphoneNavbar = () => {
 
         <div
           onClick={() => setMobileNavOpen(false)}
-          className={`transition-all duration-700 overflow-hidden${
+          className={`transition-all duration-700 overflow-hidden block md:hidden${
             mobileNavOpen
               ? "translate-y-0 flex flex-col gap-2 px-2 items-start justify-start w-full h-96  z-50 text-white opacity-100 mt-2"
               : " flex flex-col gap-2 px-2 mt-2 opacity-0 -translate-x-40"

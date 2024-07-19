@@ -8,13 +8,14 @@ interface MaskButtonProps {
   btnColor: string;
   key?: number;
   handleclick?: MouseEventHandler<HTMLButtonElement>;
+  disable?:boolean
 }
 
-const MaskButton = ({ title, btnColor, handleclick, key , linkBasePath }: MaskButtonProps) => {
+const MaskButton = ({ title, btnColor, handleclick, key , linkBasePath  ,disable}: MaskButtonProps) => {
   return (
     <Link href={linkBasePath} key={key} className="w-28">
       <Button
-        
+        disabled={disable}
         onClick={handleclick}
         className={`shadow-xl border-2 z-20 
          w-28 relative after:h-[50px] after:translate-y-2 

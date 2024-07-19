@@ -14,7 +14,6 @@ import React, { useEffect, useRef, useState } from "react";
 
 const PerformanceVideo = () => {
   const { ref, inView } = useInViewHook();
-  // const [isPlaying, setIsPlaying] = useState<boolean>(true);
   const videoRef = useRef<HTMLVideoElement>(null);
   useEffect(() => {
     if (videoRef.current) {
@@ -26,16 +25,7 @@ const PerformanceVideo = () => {
     }
   }, [inView]);
 
-  // const togglePlay = () => {
-  //   if (videoRef.current) {
-  //     if (isPlaying) {
-  //       videoRef.current.pause();
-  //     } else {
-  //       videoRef.current.play();
-  //     }
-  //     setIsPlaying(!isPlaying);
-  //   }
-  // };
+ 
   return (
     <>
       <motion.div

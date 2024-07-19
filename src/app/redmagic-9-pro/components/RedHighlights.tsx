@@ -1,7 +1,6 @@
 "use client";
 import { MenuRedmagic } from "@/Data/Menu_Redmagic";
 import { useInViewHook } from "@/hooks/inView";
-import { smoothTransition } from "@/utils/motion";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
@@ -19,7 +18,7 @@ const RedHighlights = () => {
             key={index}
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{ delay: index * animationDelay, duration:0.5}}
+            transition={{ delay: index * animationDelay, duration: 0.5 }}
             className={`w-full h-full flex flex-col ${data.grid}
           gap-2 items-center justify-center border border-white/40 bg-black "`}
           >
