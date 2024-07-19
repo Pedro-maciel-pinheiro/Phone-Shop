@@ -58,8 +58,8 @@ export default function NavBar() {
                   Perfect-Phone
                 </Link>
                 <div className={`hidden md:flex transition-all duration-200 ${navScroll?"gap-3":"gap-2"}`}>
-                  {LinksData.map((data) => (
-                    <Link href={data.linkPath}>{data.title}</Link>
+                  {LinksData.map((data,index) => (
+                    <Link key={index} href={data.linkPath}>{data.title}</Link>
                   ))}
                 </div>
               </div>
