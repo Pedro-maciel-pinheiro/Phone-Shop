@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
-import { Roboto ,Orbitron  } from "next/font/google";
+import { Roboto  } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 
 
-
-export const orbitron = Orbitron({ subsets: ["latin"], weight: ["400", "700"] });
 const roboto = Roboto({ subsets: ["latin"], weight: ["400", "500", "700"] });
 
 
