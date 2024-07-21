@@ -24,7 +24,7 @@ To get started with the Phone Shop project, follow these steps:
 Clone the repository:
 bash
 Copiar código
-git clone https://github.com/your-username/phone-shop.git
+git clone https://github.com/Pedro-maciel-pinheiro/phone-shop.git
 Navigate to the project directory:
 bash
 Copiar código
@@ -38,7 +38,7 @@ bash
 Copiar código
 npm run dev
 Usage
-Once the development server is running, you can access the application in your browser at http://localhost:3000.
+Once the development server is running, you can access the application in your browser at phone-shop-mu.vercel.app/
 
 Technologies
  <!-- Replace with actual URL to your GIF -->
