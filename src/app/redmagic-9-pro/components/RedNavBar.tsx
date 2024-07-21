@@ -1,12 +1,15 @@
 "use client";
 
-import { fadeIn, smoothScale } from "@/utils/motion";
+import { fadeIn, slideInFromLeft } from "@/utils/motion";
 import { motion } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const RedMagicNavBar = () => {
   const [navScroll, setNavScroll] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("");
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   useEffect(() => {
     const changeWhileScroll = () => {
@@ -16,9 +19,11 @@ const RedMagicNavBar = () => {
         setNavScroll(false);
       }
     };
+
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", changeWhileScroll);
     }
+
     return () => {
       if (typeof window !== "undefined") {
         window.removeEventListener("scroll", changeWhileScroll);
@@ -26,18 +31,22 @@ const RedMagicNavBar = () => {
     };
   }, []);
 
+  const handleSetActiveSection = (section: string) => {
+    setActiveSection(section);
+    document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <motion.div
-      initial="hidden"
-      animate={"visible"}
-      variants={fadeIn(0.3)}
-      className={`fixed flex w-full  h-10  text-white z-50 
-         backdrop-blur-3xl transition-all duration-700 ${navScroll ? "" : ""}`}
+      className={`fixed flex w-full h-10 text-white z-50 
+      backdrop-blur-3xl transition-all duration-1000 ${
+        mobileNavOpen ? "h-96" : "h-10"
+      }`}
     >
-      <div className=" w-full  flex items-end mx-2 gap-8  ">
+      <div className="flex-col lg:flex-row w-full flex  mx-2 gap-8">
         <Link
           className={`font-bold text-2xl transition-all duration-700 ${
-            navScroll ? " textGlowEffect " : "text-rose-700 "
+            navScroll ? "textGlowEffect" : "text-rose-700"
           }`}
           href={"/redmagic-9-pro"}
         >
@@ -45,48 +54,174 @@ const RedMagicNavBar = () => {
         </Link>
 
         <div
-          className={`hidden lg:flex transition-all duration-1000 
-             text-white/80 text-[15px] ${
-            navScroll ? "gap-4" : "gap-2"
-          }`}
+          className={`hidden lg:flex transition-all duration-1000 font-semibold
+             text-white/80 text-[15px] ${navScroll ? "gap-4" : "gap-2"}`}
         >
-          <Link className="hover:text-white transition-all" href={""}>
+          <Link href={"/"} className="hover:text-white transition-all">
+            Home
+          </Link>
+          <button
+            className={`hover:text-white transition-all ${
+              activeSection === "Design" ? "text-rose-600" : ""
+            }`}
+            onClick={() => handleSetActiveSection("Design")}
+          >
             Design
-          </Link>
-          <Link className="hover:text-white transition-all" href={""}>
+          </button>
+          <button
+            className={`hover:text-white transition-all ${
+              activeSection === "Highlights" ? "text-rose-600" : ""
+            }`}
+            onClick={() => handleSetActiveSection("Highlights")}
+          >
             Highlights
-          </Link>
-          <Link className="hover:text-white transition-all" href={""}>
+          </button>
+          <button
+            className={`hover:text-white transition-all ${
+              activeSection === "Performance" ? "text-rose-600" : ""
+            }`}
+            onClick={() => handleSetActiveSection("Performance")}
+          >
             Performance
-          </Link>
-          <Link className="hover:text-white transition-all" href={""}>
+          </button>
+          <button
+            className={`hover:text-white transition-all ${
+              activeSection === "Cooling" ? "text-rose-600" : ""
+            }`}
+            onClick={() => handleSetActiveSection("Cooling")}
+          >
             Cooling
-          </Link>
-          <Link className="hover:text-white transition-all " href={""}>
+          </button>
+          <button
+            className={`hover:text-white transition-all ${
+              activeSection === "Battery" ? "text-rose-600" : ""
+            }`}
+            onClick={() => handleSetActiveSection("Battery")}
+          >
             Battery
-          </Link>
-          <Link className="hover:text-white transition-all " href={""}>
+          </button>
+          <button
+            className={`hover:text-white transition-all ${
+              activeSection === "Experience" ? "text-rose-600" : ""
+            }`}
+            onClick={() => handleSetActiveSection("Experience")}
+          >
             Experience
-          </Link>
+          </button>
+          <button
+            className={`hover:text-white transition-all ${
+              activeSection === "Sound" ? "text-rose-600 " : " "
+            }`}
+            onClick={() => handleSetActiveSection("Sound")}
+          >
+            Sound
+          </button>
         </div>
-      </div>
-      <div className="w-full flex justify-end items-center gap-4">
-        <Link
-          className="hidden md:block text-white/80 font-semibold"
-          href={"/specifications"}
-        >
-          Specifications
-        </Link>
 
-        <button
-          className="transition-all duration-500 bg-rose-700 w-16  md:h-6 mx-2  rounded-sm flex text-end hover:ring-4
+        <motion.div
+          onClick={() => setMobileNavOpen(false)}
+          initial={{ opacity: 0 }}
+          animate={mobileNavOpen ? { opacity: 1 } : { opacity: 0 }}
+          transition={{ duration: 0.2 }}
+          className={`flex flex-col items-start lg:hidden
+               justify-start transition-all font-semibold
+              text-white/80 text-[15px] gap-2 mx-2
+            `}
+        >
+          <Link href={"/"} className="hover:text-white transition-all">
+            Home
+          </Link>
+          <button
+            className={`hover:text-white transition-all ${
+              activeSection === "Design" ? "text-rose-600" : ""
+            }`}
+            onClick={() => handleSetActiveSection("Design")}
+          >
+            Design
+          </button>
+          <button
+            className={`hover:text-white transition-all ${
+              activeSection === "Highlights" ? "text-rose-600" : ""
+            }`}
+            onClick={() => handleSetActiveSection("Highlights")}
+          >
+            Highlights
+          </button>
+          <button
+            className={`hover:text-white transition-all ${
+              activeSection === "Performance" ? "text-rose-600" : ""
+            }`}
+            onClick={() => handleSetActiveSection("Performance")}
+          >
+            Performance
+          </button>
+          <button
+            className={`hover:text-white transition-all ${
+              activeSection === "Cooling" ? "text-rose-600" : ""
+            }`}
+            onClick={() => handleSetActiveSection("Cooling")}
+          >
+            Cooling
+          </button>
+          <button
+            className={`hover:text-white transition-all ${
+              activeSection === "Battery" ? "text-rose-600" : ""
+            }`}
+            onClick={() => handleSetActiveSection("Battery")}
+          >
+            Battery
+          </button>
+          <button
+            className={`hover:text-white transition-all ${
+              activeSection === "Experience" ? "text-rose-600" : ""
+            }`}
+            onClick={() => handleSetActiveSection("Experience")}
+          >
+            Experience
+          </button>
+          <button
+            className={`hover:text-white transition-all ${
+              activeSection === "Sound" ? "text-rose-600 " : " "
+            }`}
+            onClick={() => handleSetActiveSection("Sound")}
+          >
+            Sound
+          </button>
+        </motion.div>
+      </div>
+      <div className="w-full flex justify-end items-center gap-4 absolute">
+        <div onClick={() => setMobileNavOpen((prev) => !prev)}>
+          <ChevronDown
+            size={30}
+            style={{
+              transform: mobileNavOpen ? "scaleY(-1)" : "scaleY(1)",
+            }}
+            className="text-white 
+                 transition-all duration-700 block lg:hidden animate-pulse"
+          />
+        </div>
+        <Link
+          href={{
+            pathname:"/checkout",
+            query: {
+              id: "0002",
+              price: "750",
+              category: "Phone",
+              image: "/img/09_black_2.webp",
+              image_2: "/img/09_black.webp",
+              phoneColor: "Black",
+              brand: "RedMagic",
+            },
+          }}
+          className="transition-all duration-500
+           bg-rose-700 w-20 md:h-6 mx-2 rounded-sm flex items-center justify-center hover:ring-4
          hover:ring-rose-900 hover:ring-offset-2 hover:ring-offset-slate-50"
         >
-          <div className="flex items-center justify-center w-full h-full gap-1">
+          <button className="flex gap-2">
             <p>Buy</p>
             <p className="hidden md:block">Now</p>
-          </div>
-        </button>
+          </button>
+        </Link>
       </div>
     </motion.div>
   );

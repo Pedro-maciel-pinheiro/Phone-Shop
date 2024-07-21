@@ -48,7 +48,8 @@ const ParallaxComponent: React.FC = () => {
         initial={{ opacity: 0 }}
         animate={inView ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 1.5 }}
-        className=" flex flex-col items-center mt-16 justify-center text-white text-xl md:text-4xl"
+        className=" flex flex-col items-center 
+        mt-16 justify-center text-white text-xl md:text-4xl"
       >
         <div
           className={
@@ -74,7 +75,7 @@ const ParallaxComponent: React.FC = () => {
         className=" relative w-full  mx-auto z-10
          h-screen  flex flex-col items-center justify-center"
       >
-        <div className="flex flex-col md:flex-row w-full max-w-7xl items-center justify-evenly relative ">
+        <div className="flex flex-col lg:flex-row w-full max-w-7xl items-center justify-evenly relative ">
           <motion.div
             className="hidden xl:flex flex-col gap-6 z-20 "
             initial="hidden"
@@ -133,6 +134,7 @@ const ParallaxComponent: React.FC = () => {
           </motion.div>
 
           <motion.div
+            initial="hidden"
             animate={navScroll ? "visible" : "hidden"}
             variants={slideInFromRight(0.6)}
             className="flex flex-col-reverse md:flex-col items-center justify-center w-96 h-36 mb-16 z-20 gap-3"

@@ -41,10 +41,10 @@ export default function PhonePage() {
       <div className="mt-36 w-full h-full">
         <div className="w-full flex items-start justify-start">
           <Logo
-            textStyle={"text-2xl md:text-5xl"}
+            textStyle={"text-3xl md:text-5xl"}
             underlineDelay={3.5}
             flexStyle={"items-start max-w-[80%] mx-auto"} 
-            underlineWidth={"md:max-w-[310px]"}          />
+            underlineWidth={"max-w-48  md:max-w-[310px]"}          />
         </div>
         <PhoneSlider DataHolder={PhoneWallpaper} />
         <ProductFilter

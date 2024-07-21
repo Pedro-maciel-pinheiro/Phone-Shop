@@ -70,6 +70,20 @@ export function underlineVariant(duration: number) {
     },
   };
 }
+export function underlineHeight(duration: number) {
+  return {
+    hidden: { height: 0 },
+    visible: {
+      height: "100%",
+      transition: {
+        delay: 0.5,
+        duration: duration,
+        type: "tween",
+        ease: "easeInOut",
+      },
+    },
+  };
+}
 
 export function getTransitionProps(delay: number) {
   return {

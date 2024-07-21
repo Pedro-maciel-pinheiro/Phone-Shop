@@ -25,7 +25,8 @@ function ProductFilter({ products, setBrand }: any) {
   };
 
   return (
-    <div className="w-full flex items-center justify-center gap-3  h-36 text-white">
+    <div className="w-80 md:w-full flex flex-wrap md:flex-row mx-auto md:mx-0
+     items-center justify-center gap-2 md:gap-3  h-36 text-white">
       <button
         className={`py-2 font-semibold px-4 flex items-center justify-center rounded-xl h-8 transition-all duration-100 ${
           selectedBrand === "optionDefault"

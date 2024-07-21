@@ -36,18 +36,12 @@ export interface PhoneWallpaperProps {
   subtitle: string;
   backgroundImage: StaticImageData;
 }
-
-
 export interface PhoneShowCaseProps {
   title: string;
   subtitle?: string;
   content?: string;
   backgroundImage: string | StaticImageData;
 }
-
-
-
-
 export const ServiceData: ServiceDataProps[] = [
   {
     title: "Privacy",
@@ -104,7 +98,6 @@ export const ServiceData: ServiceDataProps[] = [
     firstTextImage: Game_img,
   },
 ];
-
 export const PhoneWallpaper: PhoneWallpaperProps[] = [
   {
     title: "phone info 1",
@@ -122,7 +115,6 @@ export const PhoneWallpaper: PhoneWallpaperProps[] = [
     backgroundImage: PhoneWallpaper3,
   },
 ];
-
 export const PhoneShowCase: PhoneShowCaseProps[] = [
   {
     title: "iPhone 15 Pro",
@@ -130,7 +122,6 @@ export const PhoneShowCase: PhoneShowCaseProps[] = [
     backgroundImage: PhoneShowCasePic,
   },
 ];
-
 export const AccordionData: PhoneShowCaseProps[] = [
   {
     title: "iPhone and Mac",

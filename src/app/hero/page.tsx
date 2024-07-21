@@ -25,7 +25,7 @@ export default function Hero() {
         </motion.div>
         <div className="w-full   flex items-center justify-center">
           <Logo
-            textStyle={"text-2xl md:text-5xl lg:text-6xl"}
+            textStyle={"text-4xl md:text-5xl lg:text-6xl"}
             underlineDelay={7}
             flexStyle={"items-center justify-center"}
             underlineWidth={" md:max-w-[350px] lg:max-w-[450px]"}

@@ -3,14 +3,8 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { LinksData } from "@/Data/LinksData";
-import { motion } from "framer-motion";
-import {
-  letterVariant,
-  slideInFromLeft,
-  underlineVariant,
-} from "@/utils/motion";
+
 import { ChevronDown, ShoppingCart } from "lucide-react";
-import MaskButton from "./MaskButton";
 
 export default function NavBar() {
   const [navScroll, setNavScroll] = useState(false);
@@ -42,7 +36,7 @@ export default function NavBar() {
     <>
       {!isNavbarHidden && (
         <nav
-          className={`fixed  w-full  transition-all duration-1000
+          className={`fixed w-full  transition-all duration-1000 
        z-50  backdrop-blur-xl border-white   ${
          navScroll
            ? "h-12 border-b-2 bg-[#0c0c0c83] backdrop-blur-3xl text-white/90 "
@@ -54,12 +48,25 @@ export default function NavBar() {
               <div
                 className={`w-full flex items-end  justify-start gap-4 font-semibold `}
               >
-                <Link className={`text-2xl mx-2 ${navScroll?"textGlow-white":""}`} href={"/"}>
+                <Link 
+                
+                  onClick={() => setMobileNavOpen(false)}
+                  className={`text-2xl mx-2 ${
+                    navScroll ? "textGlow-white" : ""
+                  }`}
+                  href={"/"}
+                >
                   Perfect-Phone
                 </Link>
-                <div className={`hidden md:flex transition-all duration-200 ${navScroll?"gap-3":"gap-2"}`}>
-                  {LinksData.map((data,index) => (
-                    <Link key={index} href={data.linkPath}>{data.title}</Link>
+                <div
+                  className={`hidden md:flex transition-all duration-200 ${
+                    navScroll ? "gap-3" : "gap-2"
+                  }`}
+                >
+                  {LinksData.map((data, index) => (
+                    <Link key={index} href={data.linkPath}>
+                      {data.title}
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -78,7 +85,7 @@ export default function NavBar() {
                 />
               </div>
             </div>
-            <div className="mx-2 z-50 flex items-center justify-center mb-4 font-semibold ">
+            <div className="hidden mx-2 z-50 md:flex items-center justify-center mb-4 font-semibold ">
               <Link
                 href={"/checkout"}
                 className=" items-center font-semibold
@@ -87,14 +94,15 @@ export default function NavBar() {
                   md:h-6 mx-2  rounded-sm flex text-end hover:ring-4
          hover:ring-yellow-600 hover:ring-offset-2 hover:ring-offset-slate-50 "
               >
-                <button >
-                  <div>Checkout</div>
+                <button>
+                  <ShoppingCart/>
                 </button>
               </Link>
             </div>
           </div>
 
           <div
+           
             onClick={() => setMobileNavOpen(false)}
             className={`transition-all duration-700 overflow-hidden block md:hidden
             ${navScroll ? "text-white" : "text-black "}
@@ -106,6 +114,7 @@ export default function NavBar() {
           >
             {LinksData.map((data, index) => (
               <Link
+               
                 key={index}
                 href={data.linkPath}
                 className=" font-semibold hover:translate-x-2 transition-all"
@@ -113,6 +122,9 @@ export default function NavBar() {
                 {data.title}
               </Link>
             ))}
+            <Link 
+            className=" font-semibold hover:translate-x-2 transition-all"
+             href={"/checkout"}>Checkout</Link>
           </div>
         </nav>
       )}

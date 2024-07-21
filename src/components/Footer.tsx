@@ -1,11 +1,11 @@
-import Image from "next/image";
+
 import Link from "next/link";
 import React from "react";
 import { Github, LinkedinIcon, PhoneCall } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="footer footer-center bg-base-200 text-base-content rounded p-10">
+    <footer className="footer footer-center bg-base-200 text-base-content rounded p-10 ">
       <nav className="grid grid-flow-col gap-4 font-semibold text-sm">
         <Link className="link link-hover" href={"/"}>
          Home

@@ -3,6 +3,7 @@ import { MenuRedmagic } from "@/Data/Menu_Redmagic";
 import { useInViewHook } from "@/hooks/inView";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const RedHighlights = () => {
@@ -20,19 +21,24 @@ const RedHighlights = () => {
             animate={inView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: index * animationDelay, duration: 0.5 }}
             className={`w-full h-full flex flex-col ${data.grid}
-          gap-2 items-center justify-center border border-white/40 bg-black "`}
+          gap-2 items-center justify-center border  bg-black "`}
           >
-            <div className="relative flex flex-col w-full h-full">
-              <span className="text-white text-2xl absolute mt-2 w-full text-center ">
+            <div className="relative flex flex-col w-full h-full ">
+              <span
+                className="text-white text-xl xl:text-2xl 
+              absolute z-10 mt-2 w-full text-center "
+              >
                 {data.title}
               </span>
-              <Image
-                src={data.image}
-                alt={data.title}
-                width={500}
-                height={500}
-                className={`object-cover w-full h-full `}
-              />
+              <Link href={""} className="overflow-hidden w-full h-full ">
+                <Image
+                  src={data.image}
+                  alt={data.title}
+                  width={500}
+                  height={500}
+                  className={`object-cover w-full h-full hover:scale-105 transition-all duration-300`}
+                />
+              </Link>
             </div>
           </motion.div>
         ))}

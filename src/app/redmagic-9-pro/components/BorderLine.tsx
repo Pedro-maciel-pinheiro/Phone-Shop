@@ -6,7 +6,7 @@ import {
   slideInFromBottom,
   slideInFromLeft,
   slideInFromRight,
-  slideInFromTop,
+
 } from "@/utils/motion";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -20,7 +20,8 @@ const BorderLine = ({ pageNumber, title }: BorderLineProps) => {
       initial={"hidden"}
       animate={inView ? "visible" : "hidden"}
       variants={fadeIn(0.2)}
-      className="w-full max-w-[1900px] h-20 md:h-16 bg-[#080808] backdrop-blur-3xl flex items-center  mx-auto mt-8 mb-8
+      className="w-full max-w-[1900px] h-20 md:h-16
+       bg-[#080808] backdrop-blur-3xl flex items-center  mx-auto mt-16 mb-16
       justify-center border-2 border-white/50 
       rounded-md overflow-hidden relative z-20"
     >

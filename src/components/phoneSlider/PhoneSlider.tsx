@@ -19,7 +19,7 @@ const PhoneSlider = ({DataHolder}:ImageHolderProps) => {
     <div>
       <Swiper
         spaceBetween={30}
-        navigation={true}
+        navigation={false}
         effect={"fade"}
         pagination={{
           clickable: true,
@@ -30,15 +30,18 @@ const PhoneSlider = ({DataHolder}:ImageHolderProps) => {
         }}
         
         modules={[Navigation, Autoplay, EffectFade]}
-        className="w-full max-w-[80%] rounded-xl h-[500px]   "
+        className="w-full max-w-[80%] rounded-xl  md:h-[500px] object-cover "
       >
         {DataHolder.map((item:any) => (
-          <SwiperSlide key={item.title}>
+          <SwiperSlide key={item.title} >
             <Image
               src={item.backgroundImage}
               alt={item.title}
               width={1920}
               height={1020}
+              className="rounded-xl  max-w-[400px] max-h-[200px] 
+              md:max-w-full md:max-h-[1020px]"
+              
             />
           </SwiperSlide>
         ))}
