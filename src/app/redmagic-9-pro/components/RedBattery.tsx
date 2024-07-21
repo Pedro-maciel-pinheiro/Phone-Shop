@@ -10,7 +10,7 @@ const RedBattery = () => {
     <motion.div ref={ref} className="  w-full flex flex-col gap-3 max-w-7xl mx-auto">
       <div
         className="flex flex-col mx-8
-      gap-4 items-start justify-start text-white w-96 h-[180px]"
+      gap-4 items-start justify-start text-white w-[350px] h-[180px]"
       >
         <h1
           className={`text-2xl md:text-2xl xl:text-3xl ${

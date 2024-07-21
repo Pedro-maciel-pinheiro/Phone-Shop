@@ -93,7 +93,7 @@ function CheckOutContent() {
         className="flex flex-col-reverse md:flex-row  mt-36 mb-36
       items-center md:items-baseline  w-full max-w-4xl"
       >
-        <div className="flex flex-col w-[300px] md:w-1/2 md:pr-5 ">
+        <div className="flex flex-col items-center justify-center w-full md:w-1/2 md:pr-5 p-2 md:p-0">
           <h1 className="text-3xl font-bold mb-4">Shipping Information</h1>
           <InputFields
             email={email}
@@ -111,7 +111,7 @@ function CheckOutContent() {
             zip={zip}
             setZip={setZip}
           />
-          <div className="flex justify-between items-center mt-5">
+          <div className="flex justify-between items-center mt-5 w-full">
             <Link
               href="/"
               className="active:translate-y-1 transition-all duration-75 hover:font-semibold"

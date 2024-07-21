@@ -59,7 +59,7 @@ export function InputFields({
       <div className="text-xl font-semibold">
         <h1>Shipping address</h1>
       </div>
-      <div className="flex gap-2">
+      <div className="flex flex-col md:flex-row gap-2">
         <input
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
@@ -82,7 +82,7 @@ export function InputFields({
         placeholder="Address"
         className="input input-bordered w-full bg-white focus:bg-gray-100"
       />
-      <div className="flex gap-2">
+      <div className="flex flex-col md:flex-row gap-2">
         <input
           value={city}
           onChange={(e) => setCity(e.target.value)}

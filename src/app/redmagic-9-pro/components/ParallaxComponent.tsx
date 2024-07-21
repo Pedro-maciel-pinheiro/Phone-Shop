@@ -21,7 +21,7 @@ const ParallaxComponent: React.FC = () => {
 
   useEffect(() => {
     const changeWhileScroll = () => {
-      if (window.scrollY >= 80) {
+      if (window.scrollY >= 5) {
         setNavScroll(true);
       } else {
         setNavScroll(false);
@@ -75,7 +75,8 @@ const ParallaxComponent: React.FC = () => {
         className=" relative w-full  mx-auto z-10
          h-screen  flex flex-col items-center justify-center"
       >
-        <div className="flex flex-col lg:flex-row w-full max-w-7xl items-center justify-evenly relative ">
+        <div className="flex flex-col lg:flex-row w-full max-w-7xl 
+        items-center justify-evenly relative ">
           <motion.div
             className="hidden xl:flex flex-col gap-6 z-20 "
             initial="hidden"

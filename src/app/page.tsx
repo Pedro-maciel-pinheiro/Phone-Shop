@@ -5,6 +5,7 @@ import { ProductsProps } from "@/types/types";
 import TextCard from "@/components/text/TextCard";
 import ProductsList from "./hero/ProductsList";
 import Accordion from "@/components/Accordion";
+import SpecialProducts from "@/components/SpecialProducts";
 
 
 export default async function Home() {
@@ -18,6 +19,7 @@ export default async function Home() {
       <Contact />
       <div className=" mt-20 w-[80%] ">
         <TextCard />
+        {/* <SpecialProducts/> */}
         <ProductsList ApiData={limitedProducts} />
       </div>
       <div className="flex w-full h-screen items-center justify-center">

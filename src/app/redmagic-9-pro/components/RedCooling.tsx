@@ -17,7 +17,7 @@ const RedCooling = () => {
     <>
       <motion.div
         ref={ref}
-        className="h-[500px] md:h-[650px] w-full 
+        className="h-[500px] md:h-[850px] w-full 
         flex flex-col justify-center items-center "
       >
         <div
@@ -39,7 +39,7 @@ const RedCooling = () => {
             the CPU core.
           </p>
         </div>
-        <div className="max-w-[1400px]">
+        <div className="max-w-[1400px] mb-8 md:mb-0">
           <video
             autoPlay
             muted

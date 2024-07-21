@@ -43,7 +43,7 @@ const RedMagicNavBar = () => {
         mobileNavOpen ? "h-96" : "h-10"
       }`}
     >
-      <div className="flex-col lg:flex-row w-full flex  mx-2 gap-8">
+      <div className="flex-col lg:flex-row w-full flex  mx-2 gap-8 z-30">
         <Link
           className={`font-bold text-2xl transition-all duration-700 ${
             navScroll ? "textGlowEffect" : "text-rose-700"
@@ -57,7 +57,7 @@ const RedMagicNavBar = () => {
           className={`hidden lg:flex transition-all duration-1000 font-semibold
              text-white/80 text-[15px] ${navScroll ? "gap-4" : "gap-2"}`}
         >
-          <Link href={"/"} className="hover:text-white transition-all">
+          <Link href={"/"} className="hover:text-white transition-all mt-2">
             Home
           </Link>
           <button
@@ -128,7 +128,7 @@ const RedMagicNavBar = () => {
               text-white/80 text-[15px] gap-2 mx-2
             `}
         >
-          <Link href={"/"} className="hover:text-white transition-all">
+          <Link href={"/"} className="hover:text-white transition-all mt-2">
             Home
           </Link>
           <button
@@ -189,20 +189,20 @@ const RedMagicNavBar = () => {
           </button>
         </motion.div>
       </div>
-      <div className="w-full flex justify-end items-center gap-4 absolute">
-        <div onClick={() => setMobileNavOpen((prev) => !prev)}>
+      <div className="w-full flex justify-end items-center gap-4 absolute ">
+        <div onClick={() => setMobileNavOpen((prev) => !prev)} className="z-50 ">
           <ChevronDown
             size={30}
             style={{
               transform: mobileNavOpen ? "scaleY(-1)" : "scaleY(1)",
             }}
             className="text-white 
-                 transition-all duration-700 block lg:hidden animate-pulse"
+                transition-all duration-700 block lg:hidden animate-pulse"
           />
         </div>
         <Link
           href={{
-            pathname:"/checkout",
+            pathname: "/checkout",
             query: {
               id: "0002",
               price: "750",
@@ -213,7 +213,7 @@ const RedMagicNavBar = () => {
               brand: "RedMagic",
             },
           }}
-          className="transition-all duration-500
+          className="transition-all duration-500 mt-2 z-40
            bg-rose-700 w-20 md:h-6 mx-2 rounded-sm flex items-center justify-center hover:ring-4
          hover:ring-rose-900 hover:ring-offset-2 hover:ring-offset-slate-50"
         >
