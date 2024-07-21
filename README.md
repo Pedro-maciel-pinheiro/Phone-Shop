@@ -1,37 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Phone Shop
+ <!-- Replace with actual URL to your GIF -->
 
-## Getting Started
+Welcome to the Phone Shop project! This is a modern and sleek e-commerce application built with Next.js, TypeScript, Tailwind CSS, Framer Motion, Shadcn, and Lucide Icons. Our store specializes in providing the latest and greatest phones with an intuitive and smooth user experience.
 
-First, run the development server:
+Table of Contents
+Features
+Installation
+Usage
+Technologies
+Contributing
+License
+Features
+ <!-- Replace with actual URL to your GIF -->
 
-```bash
+Responsive Design: Fully responsive layout that looks great on all devices.
+Interactive Animations: Smooth and engaging animations powered by Framer Motion.
+Product Filtering: Easily filter products by brand and category.
+Product Details: Detailed views for each product, including high-quality images and descriptions.
+Shopping Cart: Add products to the cart and manage your order seamlessly.
+Installation
+To get started with the Phone Shop project, follow these steps:
+
+Clone the repository:
+bash
+Copiar código
+git clone https://github.com/your-username/phone-shop.git
+Navigate to the project directory:
+bash
+Copiar código
+cd phone-shop
+Install dependencies:
+bash
+Copiar código
+npm install
+Start the development server:
+bash
+Copiar código
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Usage
+Once the development server is running, you can access the application in your browser at http://localhost:3000.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Technologies
+ <!-- Replace with actual URL to your GIF -->
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project leverages the following technologies:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Next.js: A React framework for server-side rendering and static site generation.
+TypeScript: A superset of JavaScript that adds static types, enhancing code quality and maintainability.
+Tailwind CSS: A utility-first CSS framework for rapid UI development.
+Framer Motion: A library for creating fluid and powerful animations in React.
+Shadcn: Custom UI components for a consistent and polished look.
+Lucide Icons: A set of beautiful and customizable icons.
+Contributing
+We welcome contributions from the community! If you'd like to contribute, please follow these steps:
 
-## Learn More
+Fork the repository.
+Create a new branch:
+bash
+Copiar código
+git checkout -b feature/your-feature-name
+Make your changes and commit them:
+bash
+Copiar código
+git commit -m "Add feature"
+Push to the branch:
+bash
+Copiar código
+git push origin feature/your-feature-name
+Open a pull request.
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# Phone-Shop
