@@ -19,7 +19,7 @@ Technologies Used
 
 <h1> Technologies Used <h1/>
 
-<div> Next.js <div/> :
+<div> Next.js <div/> 
 <div> TypeScript <div/>
 <div> Tailwind CSS <div/>
 <div> Framer Motion <div/>
