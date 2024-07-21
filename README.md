@@ -16,17 +16,11 @@ Send Purchase Details to WhatsApp
 Technologies Used
  <!-- Replace with actual URL to your GIF -->
 
-Next.js
+<div> Next.js <div/>
+
 TypeScript
 Tailwind CSS
 Framer Motion
 Shadcn
 Lucide Icons
 
-Installation 
-
-1 Clone the repository: git clone [https://github.com/your-username/phone-shop.git](https://github.com/Pedro-maciel-pinheiro/Phone-Shop)
-
-2 Install dependencies: npm install
-
-3 Start the development server: npm run dev
