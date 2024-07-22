@@ -1,15 +1,12 @@
 
 Welcome to the Phone Shop project! This e-commerce application was created to gain more experience with fetching data from APIs, handling dynamic routes,
 and creating animations. Additionally, it includes a function to send user purchase details to WhatsApp, demonstrating backend data handling capabilities.
-
- <img src="github/pic_1.png" alt="" />
-     
-
 <br>
-
+<img src="github/pic_1.png" alt="" />
+<br>    
+<br>
  Features 
-
- 
+<br>
 <img src="github/pic_2.png" alt="" />
        
 
