@@ -30,7 +30,7 @@ const RedHighlights = () => {
               >
                 {data.title}
               </span>
-              <Link href={""} className="overflow-hidden w-full h-full ">
+              <div  className="overflow-hidden w-full h-full ">
                 <Image
                   src={data.image}
                   alt={data.title}
@@ -38,7 +38,7 @@ const RedHighlights = () => {
                   height={500}
                   className={`object-cover w-full h-full hover:scale-105 transition-all duration-300`}
                 />
-              </Link>
+              </div>
             </div>
           </motion.div>
         ))}
