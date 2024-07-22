@@ -48,7 +48,7 @@ const SpecialProducts = () => {
         <div
           className={`${orbitron.className} flex flex-col items-center md:items-start
           
-         w-96 h-full bg-[#00000015] absolute max-w-7xl  rounded-xl `}
+         w-96 h-full  absolute max-w-7xl  rounded-xl `}
         >
           <div
             className="w-full md:w-auto flex flex-col items-center
