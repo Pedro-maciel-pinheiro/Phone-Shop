@@ -60,7 +60,7 @@ const ParallaxComponent: React.FC = () => {
         >
           <Image
             className="w-80 md:w-full"
-            src="/img/logo.png"
+            src="/img/red/logo.png"
             alt="red magic logo"
             width={500} height={500}
           />
