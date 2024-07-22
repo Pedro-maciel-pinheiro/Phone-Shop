@@ -26,8 +26,9 @@ const SpecialProducts = () => {
       className=" flex flex-col gap-8 max-w-7xl 
      h-[400px] sm:h-[500px] md:h-[500px] w-full  mx-auto mb-16 overflow-hidden shadow-2xl"
     >
-      <motion.div className="w-full h-full flex relative  rounded-xl ">
-        <Link href={"/redmagic-9-pro"} className="flex w-full h-full rounded-xl overflow-hidden object-cover">
+      <motion.div className="w-full h-full flex relative  rounded-sm ">
+        <Link href={"/redmagic-9-pro"} className="flex w-full h-full 
+        rounded-sm overflow-hidden object-cover">
           <Image
             src={"/img/red/redmagic_bg.webp"}
             alt="redmagic background"
