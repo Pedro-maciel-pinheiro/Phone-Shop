@@ -34,7 +34,7 @@ const SpecialProducts = () => {
             alt="redmagic background"
             width={1400}
             height={1400}
-            className="object-cover rounded-xl 
+            className="object-cover rounded-sm 
              hidden md:block hover:scale-105 transition-all duration-300"
           />
         </Link>
